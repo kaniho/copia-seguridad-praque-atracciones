@@ -1,0 +1,64 @@
+/* filepath: /c:/wamp64/www/parque_atracciones/public/css/custom_styles.css */
+.pagination .page-link {
+    color: #007bff; /* Cambia el color de las flechas */
+}
+
+.pagination .page-link:hover {
+    color: #0056b3; /* Cambia el color de las flechas al pasar el ratón */
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff; /* Cambia el fondo del enlace activo */
+    border-color: #007bff; /* Cambia el borde del enlace activo */
+}
+
+/* parte para los datos archivados*/
+#archivado {
+    position: absolute;
+    left: -5px;
+    margin-top: -5px;
+    margin-left: 5px;
+    width: 5px;
+    height: 30px;
+    background-color: red;
+    border-radius: 5px;
+}
+
+/*parte del selector de elementos por página */
+.form-select-sm {
+    height: auto;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem; /* Ajustar el padding para dar más espacio a la flecha */
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+
+}
+
+.form-select-sm:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.form-label {
+    margin-bottom: 0;
+}
+
+
+/* parte del botón para archivar y desarchivar */
+#btn-archivar {
+    margin-right: 900px; /* Ajusta el valor según sea necesario */
+}
+
+
+
+
+/*#archivado-atraccion {
+    position: absolute;
+    left: -5px;
+    margin-top: 3px;
+    margin-left: 5px;
+    width: 5px;
+    height: 35px;
+    background-color: red;
+    border-radius: 5px;
+}*/
+/* Ajustes para los botones del formulario de búsqueda */
