@@ -3,10 +3,17 @@
 namespace App\Controllers;
 
 use App\Models\EventoModel;
+use App\Models\ReservaModel;
 
 
 class EventoController extends BaseController
 {
+    public function index(): string
+    {
+        return view('calendario');
+    }
+
+    
     public function fetchEvents()
     {
         $eventModel = new EventoModel(); // Crea una instancia del modelo
@@ -41,4 +48,28 @@ class EventoController extends BaseController
 
         return $this->response->setJSON(['status' => 'success']); 
     }
+
+    /**
+    * Parte de la graficas.
+    */
+     /*Parte del graficos */
+     public function graficos() {  
+        $session = session();
+
+        if (!$session ->get('isLoggedIn')) {
+            return redirect()->to('/login')->with('error', 'Debes iniciar sesión para acceder a los gráficos.');
+        }
+        return view('graficos');
+    }
+    public function getReservasData()
+    {
+        $reservaModel = new ReservaModel();
+        $data = $reservaModel->select('fecha, COUNT(*) as total')
+                             ->groupBy('fecha')
+                             ->where('archivado', 0)
+                             ->findAll();
+
+        return $this->response->setJSON($data);
+    }
+    
 }
