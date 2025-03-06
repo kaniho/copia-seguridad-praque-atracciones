@@ -24,6 +24,7 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+		<script src="https://kit.fontawesome.com/47d7c4b9a5.js" crossorigin="anonymous"></script>
 		<link rel="shortcut icon" href="<?= base_url("assets/media/logos/atracciones.png")?>" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -76,12 +77,32 @@ License: For each use you must have a valid license purchased only from above li
 							<div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
 								<div class="menu-item">
 									<div class="menu-content pb-2">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span>
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Panel de Administración</span>
 									</div>
 								</div>
 								<?php if ($session->get('id_rol') == 1): ?>
 									<div class="menu-item">
 										<a class="menu-link" href="<?= base_url("users")?>">
+											<span class="menu-icon">
+												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<path d="M6.28548 15.0861C7.34369 13.1814 9.35142 12 11.5304 12H12.4696C14.6486 12 16.6563 13.1814 17.7145 15.0861L19.3493 18.0287C20.0899 19.3618 19.1259 21 17.601 21H6.39903C4.87406 21 3.91012 19.3618 4.65071 18.0287L6.28548 15.0861Z" fill="black" />
+														<rect opacity="0.3" x="8" y="3" width="8" height="8" rx="4" fill="black" />
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Usuarios</span>
+										</a>
+									</div>
+									<div class="menu-item">
+										<div class="menu-content pb-2">
+											<span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span>
+										</div>
+									</div>									
+									<div class="menu-item">
+										<a class="menu-link" href="<?= base_url("dashboard") ?>">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
 												<span class="svg-icon svg-icon-2">
@@ -92,136 +113,114 @@ License: For each use you must have a valid license purchased only from above li
 												</span>
 												<!--end::Svg Icon-->
 											</span>
-											<span class="menu-title">Panel de administración</span>
+											<span class="menu-title">Inicio</span>
+										</a>
+									</div>
+									<div class="menu-item">
+										<a class="menu-link active" href="<?= base_url("graficos")?>">
+											<span class="menu-icon">
+												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
+												<span class="svg-icon svg-icon-2"><i class="fa-solid fa-chart-simple"></i></span>																		
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Graficas</span>
+										</a>
+									</div>
+									<!--Sección de calendario-->
+									<div class="menu-item">
+										<a class="menu-link" href="<?= base_url("calendario") ?>">
+											<span class="menu-icon">
+												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<path opacity="0.3" d="M21 22H3C2.4 22 2 21.6 2 21V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5V21C22 21.6 21.6 22 21 22Z" fill="black" />
+														<path d="M6 6C5.4 6 5 5.6 5 5V3C5 2.4 5.4 2 6 2C6.6 2 7 2.4 7 3V5C7 5.6 6.6 6 6 6ZM11 5V3C11 2.4 10.6 2 10 2C9.4 2 9 2.4 9 3V5C9 5.6 9.4 6 10 6C10.6 6 11 5.6 11 5ZM15 5V3C15 2.4 14.6 2 14 2C13.4 2 13 2.4 13 3V5C13 5.6 13.4 6 14 6C14.6 6 15 5.6 15 5ZM19 5V3C19 2.4 18.6 2 18 2C17.4 2 17 2.4 17 3V5C17 5.6 17.4 6 18 6C18.6 6 19 5.6 19 5Z" fill="black" />
+														<path d="M8.8 13.1C9.2 13.1 9.5 13 9.7 12.8C9.9 12.6 10.1 12.3 10.1 11.9C10.1 11.6 10 11.3 9.8 11.1C9.6 10.9 9.3 10.8 9 10.8C8.8 10.8 8.59999 10.8 8.39999 10.9C8.19999 11 8.1 11.1 8 11.2C7.9 11.3 7.8 11.4 7.7 11.6C7.6 11.8 7.5 11.9 7.5 12.1C7.5 12.2 7.4 12.2 7.3 12.3C7.2 12.4 7.09999 12.4 6.89999 12.4C6.69999 12.4 6.6 12.3 6.5 12.2C6.4 12.1 6.3 11.9 6.3 11.7C6.3 11.5 6.4 11.3 6.5 11.1C6.6 10.9 6.8 10.7 7 10.5C7.2 10.3 7.49999 10.1 7.89999 10C8.29999 9.90003 8.60001 9.80003 9.10001 9.80003C9.50001 9.80003 9.80001 9.90003 10.1 10C10.4 10.1 10.7 10.3 10.9 10.4C11.1 10.5 11.3 10.8 11.4 11.1C11.5 11.4 11.6 11.6 11.6 11.9C11.6 12.3 11.5 12.6 11.3 12.9C11.1 13.2 10.9 13.5 10.6 13.7C10.9 13.9 11.2 14.1 11.4 14.3C11.6 14.5 11.8 14.7 11.9 15C12 15.3 12.1 15.5 12.1 15.8C12.1 16.2 12 16.5 11.9 16.8C11.8 17.1 11.5 17.4 11.3 17.7C11.1 18 10.7 18.2 10.3 18.3C9.9 18.4 9.5 18.5 9 18.5C8.5 18.5 8.1 18.4 7.7 18.2C7.3 18 7 17.8 6.8 17.6C6.6 17.4 6.4 17.1 6.3 16.8C6.2 16.5 6.10001 16.3 6.10001 16.1C6.10001 15.9 6.2 15.7 6.3 15.6C6.4 15.5 6.6 15.4 6.8 15.4C6.9 15.4 7.00001 15.4 7.10001 15.5C7.20001 15.6 7.3 15.6 7.3 15.7C7.5 16.2 7.7 16.6 8 16.9C8.3 17.2 8.6 17.3 9 17.3C9.2 17.3 9.5 17.2 9.7 17.1C9.9 17 10.1 16.8 10.3 16.6C10.5 16.4 10.5 16.1 10.5 15.8C10.5 15.3 10.4 15 10.1 14.7C9.80001 14.4 9.50001 14.3 9.10001 14.3C9.00001 14.3 8.9 14.3 8.7 14.3C8.5 14.3 8.39999 14.3 8.39999 14.3C8.19999 14.3 7.99999 14.2 7.89999 14.1C7.79999 14 7.7 13.8 7.7 13.7C7.7 13.5 7.79999 13.4 7.89999 13.2C7.99999 13 8.2 13 8.5 13H8.8V13.1ZM15.3 17.5V12.2C14.3 13 13.6 13.3 13.3 13.3C13.1 13.3 13 13.2 12.9 13.1C12.8 13 12.7 12.8 12.7 12.6C12.7 12.4 12.8 12.3 12.9 12.2C13 12.1 13.2 12 13.6 11.8C14.1 11.6 14.5 11.3 14.7 11.1C14.9 10.9 15.2 10.6 15.5 10.3C15.8 10 15.9 9.80003 15.9 9.70003C15.9 9.60003 16.1 9.60004 16.3 9.60004C16.5 9.60004 16.7 9.70003 16.8 9.80003C16.9 9.90003 17 10.2 17 10.5V17.2C17 18 16.7 18.4 16.2 18.4C16 18.4 15.8 18.3 15.6 18.2C15.4 18.1 15.3 17.8 15.3 17.5Z" fill="black" />
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Calendario</span>
+										</a>
+									</div>
+									<!--Sección de horarios-->
+									<div class="menu-item">
+										<a class="menu-link" href="<?= base_url("horarios")?>">
+											<span class="menu-icon">
+												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+															<rect x="0" y="0" width="24" height="24"/>
+															<path d="M12,22 C7.02943725,22 3,17.9705627 3,13 C3,8.02943725 7.02943725,4 12,4 C16.9705627,4 21,8.02943725 21,13 C21,17.9705627 16.9705627,22 12,22 Z" fill="#000000" opacity="0.3"/>
+															<path d="M11.9630156,7.5 L12.0475062,7.5 C12.3043819,7.5 12.5194647,7.69464724 12.5450248,7.95024814 L13,12.5 L16.2480695,14.3560397 C16.403857,14.4450611 16.5,14.6107328 16.5,14.7901613 L16.5,15 C16.5,15.2109164 16.3290185,15.3818979 16.1181021,15.3818979 C16.0841582,15.3818979 16.0503659,15.3773725 16.0176181,15.3684413 L11.3986612,14.1087258 C11.1672824,14.0456225 11.0132986,13.8271186 11.0316926,13.5879956 L11.4644883,7.96165175 C11.4845267,7.70115317 11.7017474,7.5 11.9630156,7.5 Z" fill="#000000"/>
+														</g>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Horarios</span>
+										</a>
+									</div>
+									<!--Sección de Reservas-->
+									<div class="menu-item">
+										<a class="menu-link" href="<?= base_url("reservas")?>">
+											<span class="menu-icon">
+												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">										
+														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+															<rect x="0" y="0" width="24" height="24"/>
+															<path d="M13.6855025,18.7082217 C15.9113859,17.8189707 18.682885,17.2495635 22,17 C22,16.9325178 22,13.1012863 22,5.50630526 L21.9999762,5.50630526 C21.9999762,5.23017604 21.7761292,5.00632908 21.5,5.00632908 C21.4957817,5.00632908 21.4915635,5.00638247 21.4873465,5.00648922 C18.658231,5.07811173 15.8291155,5.74261533 13,7 C13,7.04449645 13,10.79246 13,18.2438906 L12.9999854,18.2438906 C12.9999854,18.520041 13.2238496,18.7439052 13.5,18.7439052 C13.5635398,18.7439052 13.6264972,18.7317946 13.6855025,18.7082217 Z" fill="#000000"/>
+															<path d="M10.3144829,18.7082217 C8.08859955,17.8189707 5.31710038,17.2495635 1.99998542,17 C1.99998542,16.9325178 1.99998542,13.1012863 1.99998542,5.50630526 L2.00000925,5.50630526 C2.00000925,5.23017604 2.22385621,5.00632908 2.49998542,5.00632908 C2.50420375,5.00632908 2.5084219,5.00638247 2.51263888,5.00648922 C5.34175439,5.07811173 8.17086991,5.74261533 10.9999854,7 C10.9999854,7.04449645 10.9999854,10.79246 10.9999854,18.2438906 L11,18.2438906 C11,18.520041 10.7761358,18.7439052 10.4999854,18.7439052 C10.4364457,18.7439052 10.3734882,18.7317946 10.3144829,18.7082217 Z" fill="#000000" opacity="0.3"/>
+														</g>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Reservas</span>
+										</a>
+									</div>
+									<!--Sección de tickets-->
+									<div class="menu-item">
+										<a class="menu-link" href="<?= base_url("tickets")?>">
+											<span class="menu-icon">
+												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
+												<span class="svg-icon svg-icon-2"><i class="fa-solid fa-ticket"></i></span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Tickets</span>
+										</a>
+									</div>
+									<!--Sección de Reseñas-->
+									<div class="menu-item">
+										<a class="menu-link" href="<?= base_url("reviews")?>">
+											<span class="menu-icon">
+												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<path opacity="0.3" d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z" fill="black" />
+														<rect x="6" y="12" width="7" height="2" rx="1" fill="black" />
+														<rect x="6" y="7" width="12" height="2" rx="1" fill="black" />
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Reseñas</span>
+										</a>
+									</div>
+									<!--Sección de Reseñas-->
+									<div class="menu-item">
+										<a class="menu-link" href="<?= base_url("atracciones")?>">
+											<span class="menu-icon">
+												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
+												<span class="svg-icon svg-icon-2"><i class="fa-solid fa-shuttle-space"></i></span>	
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Atracciones</span>
 										</a>
 									</div>
 								<?php endif; ?>
-								<div class="menu-item">
-									<a class="menu-link active" href="<?= base_url("graficos")?>">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-													<path opacity="0.3" d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z" fill="black" />
-													<path d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Graficas</span>
-									</a>
-								</div>
-								<div class="menu-item">
-									<a class="menu-link" href="<?= base_url("dashboard") ?>">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-													<path opacity="0.3" d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z" fill="black" />
-													<path d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Dashboard</span>
-									</a>
-								</div>
-								<!--Sección de calendario-->
-								<div class="menu-item">
-									<a class="menu-link" href="<?= base_url("calendario") ?>">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-													<path opacity="0.3" d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z" fill="black" />
-													<path d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Calendario</span>
-									</a>
-								</div>
-								<!--Sección de horarios-->
-								<div class="menu-item">
-									<a class="menu-link" href="<?= base_url("horarios")?>">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-													<path opacity="0.3" d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z" fill="black" />
-													<path d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Horarios</span>
-									</a>
-								</div>
-								<!--Sección de Reservas-->
-								<div class="menu-item">
-									<a class="menu-link" href="<?= base_url("reservas")?>">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-													<path opacity="0.3" d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z" fill="black" />
-													<path d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Reservas</span>
-									</a>
-								</div>
-								<!--Sección de tickets-->
-								<div class="menu-item">
-									<a class="menu-link" href="<?= base_url("tickets")?>">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-													<path opacity="0.3" d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z" fill="black" />
-													<path d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Tickets</span>
-									</a>
-								</div>
-								<!--Sección de Reseñas-->
-								<div class="menu-item">
-									<a class="menu-link" href="<?= base_url("reviews")?>">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-													<path opacity="0.3" d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z" fill="black" />
-													<path d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Reseñas</span>
-									</a>
-								</div>
-								<!--Sección de Reseñas-->
-								<div class="menu-item">
-									<a class="menu-link" href="<?= base_url("atracciones")?>">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-													<path opacity="0.3" d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z" fill="black" />
-													<path d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Atracciones</span>
-									</a>
-								</div>
 					
 							</div>
 							<!--end::Menu-->
@@ -313,6 +312,35 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Menu wrapper-->
 									<div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}"></div>
 									<!--end::Menu wrapper-->
+									<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack"><!-- migas de pan -->
+										<!--begin::Page title-->
+										<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+											<!--begin::Title-->
+											<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Graficas</h1>
+											<!--end::Title-->
+											<!--begin::Separator-->
+											<span class="h-20px border-gray-200 border-start mx-4"></span>
+											<!--end::Separator-->
+											<!--begin::Breadcrumb-->
+											<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+												<!--begin::Item-->
+												<li class="breadcrumb-item text-muted">
+													<a href="<?= base_url("dashboard") ?>" class="text-muted text-hover-primary">Inicio</a>
+												</li>
+												<!--end::Item-->
+												<!--begin::Item-->
+												<li class="breadcrumb-item">
+													<span class="bullet bg-gray-200 w-5px h-2px"></span>
+												</li>
+												<!--end::Item-->
+												<!--begin::Item-->
+												<li class="breadcrumb-item text-dark">Listado de graficas</li>
+												<!--end::Item-->
+											</ul>
+											<!--end::Breadcrumb-->
+										</div>
+										<!--end::Page title-->
+									</div><!-- fin migas de pan -->
 								</div>
 								<!--end::Navbar-->
 								<!--begin::Topbar-->
@@ -341,27 +369,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Content-->
 					<div class="content d-flex flex-column flex-column-fluid" id="kt_content"> <!--MIGAS DE PAN-->
 						<!--begin::Toolbar-->
-						<div class="toolbar" id="kt_toolbar">
-							<!--begin::Container-->
-							<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
-								<!--begin::Page title-->
-								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Dashboard
-									<!--begin::Separator-->
-									<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
-									<!--end::Separator-->
-									<!--begin::Description-->
-									<small class="text-muted fs-7 fw-bold my-1 ms-1">#XRS-45670</small>
-									<!--end::Description--></h1>
-									<!--end::Title-->
-								</div>
-									<!--FIN MIGAS DE PAN-->
-					
-							</div>
-							<!--end::Container-->
-						</div>
-						<!--end::Toolbar-->
+						
 						<!--begin::Post-->
 						<div class="post d-flex flex-column-fluid" id="kt_post">
 							<!--begin::Container-->
@@ -369,179 +377,19 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Row-->
 								<div class="row gy-5 g-xl-8"> <!--INICIO DE PLANTILLA GRAFICOS-->
 									<!--begin::Col-->
-									<div class="col-xxl-4">
+									<div class="col-xxl-6">
 										<!--begin::Mixed Widget 2-->
 										<div class="card card-xxl-stretch">
 											<!--begin::Header-->
-											<div class="card-header border-0 bg-danger py-5">
-												<h3 class="card-title fw-bolder text-white">Sales Statistics</h3>
-												<div class="card-toolbar">
-													<!--begin::Menu-->
-													<button type="button" class="btn btn-sm btn-icon btn-color-white btn-active-white btn-active-color- border-0 me-n3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-														<!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-														<span class="svg-icon svg-icon-2">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																	<rect x="5" y="5" width="5" height="5" rx="1" fill="#000000" />
-																	<rect x="14" y="5" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																	<rect x="5" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																	<rect x="14" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																</g>
-															</svg>
-														</span>
-														<!--end::Svg Icon-->
-													</button>
-													<!--begin::Menu 3-->
-													<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3" data-kt-menu="true">
-														<!--begin::Heading-->
-														<div class="menu-item px-3">
-															<div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Payments</div>
-														</div>
-														<!--end::Heading-->
-														<!--begin::Menu item-->
-														<div class="menu-item px-3">
-															<a href="#" class="menu-link px-3">Create Invoice</a>
-														</div>
-														<!--end::Menu item-->
-														<!--begin::Menu item-->
-														<div class="menu-item px-3">
-															<a href="#" class="menu-link flex-stack px-3">Create Payment
-															<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i></a>
-														</div>
-														<!--end::Menu item-->
-														<!--begin::Menu item-->
-														<div class="menu-item px-3">
-															<a href="#" class="menu-link px-3">Generate Bill</a>
-														</div>
-														<!--end::Menu item-->
-														<!--begin::Menu item-->
-														<div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-end">
-															<a href="#" class="menu-link px-3">
-																<span class="menu-title">Subscription</span>
-																<span class="menu-arrow"></span>
-															</a>
-															<!--begin::Menu sub-->
-															<div class="menu-sub menu-sub-dropdown w-175px py-4">
-																<!--begin::Menu item-->
-																<div class="menu-item px-3">
-																	<a href="#" class="menu-link px-3">Plans</a>
-																</div>
-																<!--end::Menu item-->
-																<!--begin::Menu item-->
-																<div class="menu-item px-3">
-																	<a href="#" class="menu-link px-3">Billing</a>
-																</div>
-																<!--end::Menu item-->
-																<!--begin::Menu item-->
-																<div class="menu-item px-3">
-																	<a href="#" class="menu-link px-3">Statements</a>
-																</div>
-																<!--end::Menu item-->
-																<!--begin::Menu separator-->
-																<div class="separator my-2"></div>
-																<!--end::Menu separator-->
-																<!--begin::Menu item-->
-																<div class="menu-item px-3">
-																	<div class="menu-content px-3">
-																		<!--begin::Switch-->
-																		<label class="form-check form-switch form-check-custom form-check-solid">
-																			<!--begin::Input-->
-																			<input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications" />
-																			<!--end::Input-->
-																			<!--end::Label-->
-																			<span class="form-check-label text-muted fs-6">Recuring</span>
-																			<!--end::Label-->
-																		</label>
-																		<!--end::Switch-->
-																	</div>
-																</div>
-																<!--end::Menu item-->
-															</div>
-															<!--end::Menu sub-->
-														</div>
-														<!--end::Menu item-->
-														<!--begin::Menu item-->
-														<div class="menu-item px-3 my-1">
-															<a href="#" class="menu-link px-3">Settings</a>
-														</div>
-														<!--end::Menu item-->
-													</div>
-													<!--end::Menu 3-->
-													<!--end::Menu-->
-												</div>
+											<div class="card-header border-0 bg-primary py-5">
+												<h3 class="card-title fw-bolder text-white">Usuarios</h3>
 											</div>
 											<!--end::Header-->
 											<!--begin::Body-->
 											<div class="card-body p-0">
 												<!--begin::Chart-->
-												<div class="mixed-widget-2-chart card-rounded-bottom bg-danger" data-kt-color="danger" style="height: 200px"></div>
+												<div id="kt_apexcharts_2" class="card-rounded-bottom " style="height: 350px;"></div>
 												<!--end::Chart-->
-												<!--begin::Stats-->
-												<div class="card-p mt-n20 position-relative">
-													<!--begin::Row-->
-													<div class="row g-0">
-														<!--begin::Col-->
-														<div class="col bg-light-warning px-6 py-8 rounded-2 me-7 mb-7">
-															<!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
-															<span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<rect x="8" y="9" width="3" height="10" rx="1.5" fill="black" />
-																	<rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5" fill="black" />
-																	<rect x="18" y="11" width="3" height="8" rx="1.5" fill="black" />
-																	<rect x="3" y="13" width="3" height="6" rx="1.5" fill="black" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<a href="#" class="text-warning fw-bold fs-6">Weekly Sales</a>
-														</div>
-														<!--end::Col-->
-														<!--begin::Col-->
-														<div class="col bg-light-primary px-6 py-8 rounded-2 mb-7">
-															<!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
-															<span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.3" d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z" fill="black" />
-																	<path d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z" fill="black" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<a href="#" class="text-primary fw-bold fs-6">New Projects</a>
-														</div>
-														<!--end::Col-->
-													</div>
-													<!--end::Row-->
-													<!--begin::Row-->
-													<div class="row g-0">
-														<!--begin::Col-->
-														<div class="col bg-light-danger px-6 py-8 rounded-2 me-7">
-															<!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
-															<span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="black" />
-																	<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="black" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<a href="#" class="text-danger fw-bold fs-6 mt-2">Item Orders</a>
-														</div>
-														<!--end::Col-->
-														<!--begin::Col-->
-														<div class="col bg-light-success px-6 py-8 rounded-2">
-															<!--begin::Svg Icon | path: icons/duotune/communication/com010.svg-->
-															<span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path d="M6 8.725C6 8.125 6.4 7.725 7 7.725H14L18 11.725V12.925L22 9.725L12.6 2.225C12.2 1.925 11.7 1.925 11.4 2.225L2 9.725L6 12.925V8.725Z" fill="black" />
-																	<path opacity="0.3" d="M22 9.72498V20.725C22 21.325 21.6 21.725 21 21.725H3C2.4 21.725 2 21.325 2 20.725V9.72498L11.4 17.225C11.8 17.525 12.3 17.525 12.6 17.225L22 9.72498ZM15 11.725H18L14 7.72498V10.725C14 11.325 14.4 11.725 15 11.725Z" fill="black" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<a href="#" class="text-success fw-bold fs-6 mt-2">Bug Reports</a>
-														</div>
-														<!--end::Col-->
-													</div>
-													<!--end::Row-->
-												</div>
-												<!--end::Stats-->
 											</div>
 											<!--end::Body-->
 										</div>
@@ -549,301 +397,66 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Col-->
 									<!--begin::Col-->
-									<div class="col-xxl-4">
-										<!--begin::List Widget 5-->
+									<div class="col-xxl-6">
+										<!--begin::Mixed Widget 2-->
 										<div class="card card-xxl-stretch">
 											<!--begin::Header-->
-											<div class="card-header align-items-center border-0 mt-4">
-												<h3 class="card-title align-items-start flex-column">
-													<span class="fw-bolder mb-2 text-dark">Activities</span>
-													<span class="text-muted fw-bold fs-7">890,344 Sales</span>
-												</h3>
-												<div class="card-toolbar">
-													<!--begin::Menu-->
-													<button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-														<!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-														<span class="svg-icon svg-icon-2">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																	<rect x="5" y="5" width="5" height="5" rx="1" fill="#000000" />
-																	<rect x="14" y="5" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																	<rect x="5" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																	<rect x="14" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																</g>
-															</svg>
-														</span>
-														<!--end::Svg Icon-->
-													</button>
-													<!--begin::Menu 1-->
-													<div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_61484bf44f851">
-														<!--begin::Header-->
-														<div class="px-7 py-5">
-															<div class="fs-5 text-dark fw-bolder">Filter Options</div>
-														</div>
-														<!--end::Header-->
-														<!--begin::Menu separator-->
-														<div class="separator border-gray-200"></div>
-														<!--end::Menu separator-->
-														<!--begin::Form-->
-														<div class="px-7 py-5">
-															<!--begin::Input group-->
-															<div class="mb-10">
-																<!--begin::Label-->
-																<label class="form-label fw-bold">Status:</label>
-																<!--end::Label-->
-																<!--begin::Input-->
-																<div>
-																	<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_61484bf44f851" data-allow-clear="true">
-																		<option></option>
-																		<option value="1">Approved</option>
-																		<option value="2">Pending</option>
-																		<option value="2">In Process</option>
-																		<option value="2">Rejected</option>
-																	</select>
-																</div>
-																<!--end::Input-->
-															</div>
-															<!--end::Input group-->
-															<!--begin::Input group-->
-															<div class="mb-10">
-																<!--begin::Label-->
-																<label class="form-label fw-bold">Member Type:</label>
-																<!--end::Label-->
-																<!--begin::Options-->
-																<div class="d-flex">
-																	<!--begin::Options-->
-																	<label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-																		<input class="form-check-input" type="checkbox" value="1" />
-																		<span class="form-check-label">Author</span>
-																	</label>
-																	<!--end::Options-->
-																	<!--begin::Options-->
-																	<label class="form-check form-check-sm form-check-custom form-check-solid">
-																		<input class="form-check-input" type="checkbox" value="2" checked="checked" />
-																		<span class="form-check-label">Customer</span>
-																	</label>
-																	<!--end::Options-->
-																</div>
-																<!--end::Options-->
-															</div>
-															<!--end::Input group-->
-															<!--begin::Input group-->
-															<div class="mb-10">
-																<!--begin::Label-->
-																<label class="form-label fw-bold">Notifications:</label>
-																<!--end::Label-->
-																<!--begin::Switch-->
-																<div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-																	<input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked" />
-																	<label class="form-check-label">Enabled</label>
-																</div>
-																<!--end::Switch-->
-															</div>
-															<!--end::Input group-->
-															<!--begin::Actions-->
-															<div class="d-flex justify-content-end">
-																<button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
-																<button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
-															</div>
-															<!--end::Actions-->
-														</div>
-														<!--end::Form-->
-													</div>
-													<!--end::Menu 1-->
-													<!--end::Menu-->
-												</div>
+											<div class="card-header border-0 bg-success py-5">
+												<h3 class="card-title fw-bolder text-white">Reservas</h3>
 											</div>
 											<!--end::Header-->
 											<!--begin::Body-->
-											<div class="card-body pt-5">
-												<!--begin::Timeline-->
-												<div class="timeline-label">
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">08:42</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-warning fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="fw-mormal timeline-content text-muted ps-3">Outlines keep you honest. And keep structure</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">10:00</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-success fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Content-->
-														<div class="timeline-content d-flex">
-															<span class="fw-bolder text-gray-800 ps-3">AEOL meeting</span>
-														</div>
-														<!--end::Content-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">14:37</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-danger fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Desc-->
-														<div class="timeline-content fw-bolder text-gray-800 ps-3">Make deposit
-														<a href="#" class="text-primary">USD 700</a>. to ESL</div>
-														<!--end::Desc-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">16:50</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-primary fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="timeline-content fw-mormal text-muted ps-3">Indulging in poorly driving and keep structure keep great</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">21:03</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-danger fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Desc-->
-														<div class="timeline-content fw-bold text-gray-800 ps-3">New order placed
-														<a href="#" class="text-primary">#XF-2356</a>.</div>
-														<!--end::Desc-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">16:50</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-primary fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="timeline-content fw-mormal text-muted ps-3">Indulging in poorly driving and keep structure keep great</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">21:03</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-danger fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Desc-->
-														<div class="timeline-content fw-bold text-gray-800 ps-3">New order placed
-														<a href="#" class="text-primary">#XF-2356</a>.</div>
-														<!--end::Desc-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">10:30</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-success fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="timeline-content fw-mormal text-muted ps-3">Finance KPI Mobile app launch preparion meeting</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-												</div>
-												<!--end::Timeline-->
+											<div class="card-body p-0">
+												<!--begin::Chart-->
+												<div id="kt_apexcharts_3" class="card-rounded-bottom " style="height: 350px;"></div>
+												<!--end::Chart-->
 											</div>
-											<!--end: Card Body-->
+											<!--end::Body-->
 										</div>
-										<!--end: List Widget 5-->
+										<!--end::Mixed Widget 2-->
 									</div>
 									<!--end::Col-->
 									<!--begin::Col-->
-									<div class="col-xxl-4">
-										<!--begin::Mixed Widget 7-->
-										<div class="card card-xxl-stretch-50 mb-5 mb-xl-8">
+									<div class="col-xxl-6">
+										<!--begin::Mixed Widget 2-->
+										<div class="card card-xxl-stretch">
+											<!--begin::Header-->
+											<div class="card-header border-0 bg-warning py-5">
+												<h3 class="card-title fw-bolder text-white">Reseñas</h3>
+											</div>
+											<!--end::Header-->
 											<!--begin::Body-->
-											<div class="card-body d-flex flex-column p-0">
-												<!--begin::Stats-->
-												<div class="flex-grow-1 card-p pb-0">
-													<div class="d-flex flex-stack flex-wrap">
-														<div class="me-2">
-															<a href="#" class="text-dark text-hover-primary fw-bolder fs-3">Generate Reports</a>
-															<div class="text-muted fs-7 fw-bold">Finance and accounting reports</div>
-														</div>
-														<div class="fw-bolder fs-3 text-primary">$24,500</div>
-													</div>
-												</div>
-												<!--end::Stats-->
+											<div class="card-body p-0">
 												<!--begin::Chart-->
-												<div class="mixed-widget-7-chart card-rounded-bottom" data-kt-chart-color="primary" style="height: 150px"></div>
+												<div id="kt_apexcharts_4" class="card-rounded-bottom " style="height: 350px;"></div>
 												<!--end::Chart-->
 											</div>
 											<!--end::Body-->
 										</div>
-										<!--end::Mixed Widget 7-->
-										<!--begin::Mixed Widget 10-->
-										<div class="card card-xxl-stretch-50 mb-5 mb-xl-8"> <!-- PRUEBA DE APEXCHARTS CON LA BAS -->
-											<!--begin::Body-->
-											<div class="card-body p-0 d-flex justify-content-between flex-column overflow-hidden">
-												<!--begin::Hidden-->
-												<div class="d-flex flex-stack flex-wrap flex-grow-1 px-9 pt-9 pb-3">
-													<div class="me-2">
-														<span class="fw-bolder text-gray-800 d-block fs-3">Reservas</span>
-														<span class="text-gray-400 fw-bold">Fechas de Reservas</span>
-													</div>
-													<div class="fw-bolder fs-3 text-primary" id="totalReservas"></div>
-												</div>
-												<!--end::Hidden-->
-												<!--begin::Chart-->
-												<div id="chart" class="mixed-widget-10-chart" data-kt-color="primary" style="height: 175px"></div>
-												<!--end::Chart-->
-											</div>
-											<!--end::Body-->
-										</div>
-										<!--end::Mixed Widget 10-->
-										
+										<!--end::Mixed Widget 2-->
 									</div>
 									<!--end::Col-->
-									
+									<!--begin::Col-->
+									<div class="col-xxl-6">
+										<!--begin::Mixed Widget 2-->
+										<div class="card card-xxl-stretch">
+											<!--begin::Header-->
+											<div class="card-header border-0 bg-danger py-5">
+												<h3 class="card-title fw-bolder text-white">Atracciones</h3>
+											</div>
+											<!--end::Header-->
+											<!--begin::Body-->
+											<div class="card-body p-0">
+												<!--begin::Chart-->
+												<div id="kt_apexcharts_5" class="card-rounded-bottom " style="height: 350px;"></div>
+												<!--end::Chart-->
+											</div>
+											<!--end::Body-->
+										</div>
+										<!--end::Mixed Widget 2-->
+									</div>
+									<!--end::Col-->
 								</div> <!--FIN DE PLANTILLAS DE GRAFICOS -->
-								
-								
-								
-
 								<!--end::Row-->
 							</div>
 							<!--end::Container-->
@@ -914,39 +527,257 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="assets/js/custom/modals/create-app.js"></script>
 		<script src="assets/js/custom/modals/upgrade-plan.js"></script>
 		<!--end::Page Custom Javascript-->
+		
 		<!-- ApexCharts JS -->
 		<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.27.3/dist/apexcharts.min.js"></script>
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 		<script>
-			$(document).ready(function () {
-				$.ajax({
-					url: '<?= base_url('evento/getReservasData') ?>',
-					method: 'GET',
-					success: function (data) {
-						let totalReservas = data.reduce((sum, item) => sum + item.total, 0);
-						$('#totalReservas').text(totalReservas);
+			$(document).ready(function() {
+				// Función para obtener datos de usuarios
+				function fetchUserData() {
+					$.ajax({
+						url: '<?= base_url('evento/getUserData') ?>', // URL para obtener datos de usuarios
+						method: 'GET',
+						success: function(data) {
+							updateUserChart(data); // Llama a la función para actualizar el gráfico de usuarios
+						}
+					});
+				}
 
-						let options = {
-							chart: {
-								type: 'line',
-								height: 175
+				// Función para obtener datos de reservas
+				function fetchReservaData() {
+					$.ajax({
+						url: '<?= base_url('evento/getReservaData') ?>', // URL para obtener datos de reservas
+						method: 'GET',
+						success: function(data) {
+							updateReservaChart(data); // Llama a la función para actualizar el gráfico de reservas
+						}
+					});
+				}
+
+				// Función para obtener datos de reseñas
+				function fetchReviewData() {
+					$.ajax({
+						url: '<?= base_url('evento/getReviewData') ?>', // URL para obtener datos de reseñas
+						method: 'GET',
+						success: function(data) {
+							updateReviewChart(data); // Llama a la función para actualizar el gráfico de reseñas
+						}
+					});
+				}
+
+				// Función para obtener datos de atracciones
+				function fetchAtraccionData() {
+					$.ajax({
+						url: '<?= base_url('evento/getAtraccionData') ?>', // URL para obtener datos de atracciones
+						method: 'GET',
+						success: function(data) {
+							updateAtraccionChart(data); // Llama a la función para actualizar el gráfico de atracciones
+						}
+					});
+				}
+
+				// Función para actualizar el gráfico de usuarios
+				function updateUserChart(data) {
+					let options = {
+						series: [{
+							name: 'Usuarios',
+							data: data.users.map(user => user.id) // Mapea los datos de usuarios para obtener los IDs
+						}],
+						chart: {
+							type: 'bar', // Tipo de gráfico: barras
+							height: 350
+						},
+						plotOptions: {
+							bar: {
+								horizontal: false, // Columnas verticales
+								columnWidth: '55%',
+								endingShape: 'rounded'
 							},
-							series: [{
-								name: 'Reservas',
-								data: data.map(item => item.total)
-							}],
-							xaxis: {
-								categories: data.map(item => item.fecha)
+						},
+						dataLabels: {
+							enabled: false
+						},
+						stroke: {
+							show: true,
+							width: 2,
+							colors: ['transparent']
+						},
+						xaxis: {
+							categories: data.users.map(user => user.nombre_usuario) // Mapea los datos de usuarios para obtener los nombres
+						},
+						yaxis: {
+							title: {
+								text: 'Número de Usuarios'
 							}
-						};
+						},
+						fill: {
+							opacity: 1
+						},
+						tooltip: {
+							y: {
+								formatter: function (val) {
+									return val + " usuarios"
+								}
+							}
+						},
+						colors: ['#1E90FF', '#FF6347', '#32CD32'] // Colores personalizados
+					};
 
-						let chart = new ApexCharts(document.querySelector("#chart"), options);
-						chart.render();
-					}
-				});
+					let chart = new ApexCharts(document.querySelector("#kt_apexcharts_2"), options);
+					chart.render(); // Renderiza el gráfico
+				}
+
+				// Función para actualizar el gráfico de reservas
+				function updateReservaChart(data) {
+					let options = {
+						series: [{
+							name: 'Reservas',
+							data: data.reservas.map(reserva => reserva.id) // Mapea los datos de reservas para obtener los IDs
+						}],
+						chart: {
+							type: 'line', // Tipo de gráfico: líneas
+							height: 350,
+							zoom: {
+								enabled: false
+							}
+						},
+						dataLabels: {
+							enabled: false
+						},
+						stroke: {
+							curve: 'smooth'
+						},
+						title: {
+							text: 'Reservas por Fecha',
+							align: 'left'
+						},
+						grid: {
+							row: {
+								colors: ['#f3f3f3', 'transparent'], // Alternar colores de las filas
+								opacity: 0.5
+							},
+						},
+						xaxis: {
+							categories: data.reservas.map(reserva => reserva.fecha) // Mapea los datos de reservas para obtener las fechas
+						},
+						yaxis: {
+							title: {
+								text: 'Número de Reservas'
+							}
+						},
+						markers: {
+							size: 5,
+							colors: ['#FFA500'],
+							strokeColors: '#fff',
+							strokeWidth: 2,
+							hover: {
+								size: 7,
+							}
+						},
+						colors: ['#FF4500'] // Color personalizado
+					};
+
+					let chart = new ApexCharts(document.querySelector("#kt_apexcharts_3"), options);
+					chart.render(); // Renderiza el gráfico
+				}
+
+				// Función para actualizar el gráfico de reseñas
+				function updateReviewChart(data) {
+					let options = {
+						series: [{
+							name: 'Reseñas',
+							data: data.reviews.map(review => review.id) // Mapea los datos de reseñas para obtener los IDs
+						}],
+						chart: {
+							type: 'area', // Tipo de gráfico: área
+							height: 350,
+							zoom: {
+								enabled: false
+							}
+						},
+						dataLabels: {
+							enabled: false
+						},
+						stroke: {
+							curve: 'smooth'
+						},
+						title: {
+							text: 'Reseñas por Fecha',
+							align: 'left'
+						},
+						grid: {
+							row: {
+								colors: ['#f3f3f3', 'transparent'], // Alternar colores de las filas
+								opacity: 0.5
+							},
+						},
+						xaxis: {
+							categories: data.reviews.map(review => review.fecha) // Mapea los datos de reseñas para obtener las fechas
+						},
+						yaxis: {
+							title: {
+								text: 'Número de Reseñas'
+							}
+						},
+						markers: {
+							size: 5,
+							colors: ['#00FF00'],
+							strokeColors: '#fff',
+							strokeWidth: 2,
+							hover: {
+								size: 7,
+							}
+						},
+						colors: ['#008000'] // Color personalizado
+					};
+
+					let chart = new ApexCharts(document.querySelector("#kt_apexcharts_4"), options);
+					chart.render(); // Renderiza el gráfico
+				}
+
+				// Función para actualizar el gráfico de atracciones
+				function updateAtraccionChart(data) {
+					let options = {
+						series: [{
+							name: 'Atracciones',
+							data: data.atracciones.map(atraccion => atraccion.id) // Mapea los datos de atracciones para obtener los IDs
+						}],
+						chart: {
+							type: 'bar', // Tipo de gráfico: barras
+							height: 350,
+							stacked: true // Habilitar barras apiladas
+						},
+						plotOptions: {
+							bar: {
+								horizontal: true, // Cambiar a barras horizontales
+							},
+						},
+						dataLabels: {
+							enabled: false
+						},
+						xaxis: {
+							categories: data.atracciones.map(atraccion => atraccion.nombre) // Mapea los datos de atracciones para obtener los nombres
+						},
+						colors: ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF'] // Colores personalizados
+					};
+
+					let chart = new ApexCharts(document.querySelector("#kt_apexcharts_5"), options);
+					chart.render(); // Renderiza el gráfico
+				}
+
+				// Llamadas a las funciones para obtener los datos y actualizar los gráficos
+				fetchUserData();
+				fetchReservaData();
+				fetchReviewData();
+				fetchAtraccionData();
 			});
 		</script>
+
+		
+
 		<!--end::Javascript-->
 	</body>
 	<!--end::Body-->

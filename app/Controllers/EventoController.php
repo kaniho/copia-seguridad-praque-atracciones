@@ -3,8 +3,10 @@
 namespace App\Controllers;
 
 use App\Models\EventoModel;
+use App\Models\UserModel;
 use App\Models\ReservaModel;
-
+use App\Models\ReviewModel;
+use App\Models\AtraccionesModel;
 
 class EventoController extends BaseController
 {
@@ -61,15 +63,59 @@ class EventoController extends BaseController
         }
         return view('graficos');
     }
-    public function getReservasData()
+    public function getUserData()
     {
-        $reservaModel = new ReservaModel();
-        $data = $reservaModel->select('fecha, COUNT(*) as total')
-                             ->groupBy('fecha')
-                             ->where('archivado', 0)
-                             ->findAll();
+        $userModel = new UserModel();
+        $users = $userModel->findAll();
+
+        $data = [
+            'total_users' => count($users),
+            'users' => $users
+        ];
 
         return $this->response->setJSON($data);
     }
-    
+
+    public function getReservaData()
+    {
+        $reservaModel = new ReservaModel();
+        $reservas = $reservaModel->findAll();
+
+        $data = [
+            'total_reservas' => count($reservas),
+            'reservas' => $reservas
+        ];
+
+        return $this->response->setJSON($data);
+    }
+
+    public function getReviewData()
+    {
+        $reviewModel = new ReviewModel();
+        $reviews = $reviewModel->findAll();
+
+        $data = [
+            'total_reviews' => count($reviews),
+            'reviews' => $reviews
+        ];
+
+        return $this->response->setJSON($data);
+    }
+
+    public function getAtraccionData()
+    {
+        $atraccionModel = new AtraccionesModel();
+        $atracciones = $atraccionModel->findAll();
+
+        $data = [
+            'total_atracciones' => count($atracciones),
+            'atracciones' => $atracciones
+        ];
+
+        return $this->response->setJSON($data);
+    }
+
+
+
+   
 }

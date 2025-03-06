@@ -19,11 +19,20 @@ $routes->get('settings', 'AuthController::setting');
 $routes->get('info_users', 'AuthController::info_users');
 $routes->post('deactivateAccount', 'AuthController::deactivateAccount');
 $routes->get('graficos','EventoController::graficos');
-$routes->get('changelog','AuthController::changelog');
-$routes->get('evento/getReservasData', 'EventoController::getReservasData');
+$routes->get('changelog','AuthController::changelog'); // Ruta para el changelog
+
+
+
+
 
 // Grupo de rutas con filtro
 $routes->group("", ["filter" => "auth"], function ($routes) {
+    //rutas para los graficos
+    $routes->get('evento/getUserData', 'EventoController::getUserData');
+    $routes->get('evento/getReservaData', 'EventoController::getReservaData');
+    $routes->get('evento/getReviewData', 'EventoController::getReviewData');
+    $routes->get('evento/getAtraccionData', 'EventoController::getAtraccionData');
+
     // ruta de calendario
     $routes->get("calendario", "EventoController::index"); // Página de calendario
 

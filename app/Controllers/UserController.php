@@ -23,6 +23,7 @@ class UserController extends BaseController
         //$fechaIngreso = $this->request->getVar('fechaIngreso'); // Obtener el filtro de fecha de ingreso
         $usuarioArchivado = $this->request->getVar('usuarioArchivado'); // Obtener el filtro de usuario archivado
         $perPage = $this->request->getVar('perPage') ?? 3; // Obtener el número de elementos por página, por defecto 3
+        $page = $this->request->getVar('page') ?? 1; // Obtener la página actual, por defecto 1
 
         // Parámetros de ordenación
         $sort = $this->request->getVar('sort') ?? 'id';
@@ -39,7 +40,7 @@ class UserController extends BaseController
         if ($rol) $filtrosActivos++;
         //if ($ultimaConexion) $filtrosActivos++;
         //if ($fechaIngreso) $filtrosActivos++;
-        if ($usuarioArchivado !== null) $filtrosActivos++;
+        if ($usuarioArchivado !== null) $filtrosActivos++; // Contar el filtro de usuarioArchivado incluso si es "Todos"
 
         // Aplicar filtros si se introducen
         if ($usuario) {
@@ -83,6 +84,7 @@ class UserController extends BaseController
             'filtrosActivos' => $filtrosActivos,
             'sort' => $sort, // Enviar el campo de ordenación a la vista
             'order' => $order, // Enviar la dirección de ordenación a la vista
+            'page' => $page, // Enviar la página actual a la vista
         ];
         
         return view('usuarios/user_list', $data); // Cargar la vista con los datos
