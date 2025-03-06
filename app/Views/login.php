@@ -87,7 +87,7 @@ License: For each use you must have a valid license purchased only from above li
 								<label class="form-label fs-6 fw-bolder text-dark">Email</label>
 								<!--end::Label-->
 								<!--begin::Input-->
-								<input class="form-control form-control-lg form-control-solid" type="text" name="email" placeholder="email" autocomplete="off" />
+								<input class="form-control form-control-lg form-control-solid" type="text" name="email" placeholder="Email" autocomplete="off" />
 								<!--end::Input-->
 							</div>
 							<!--end::Input group-->
@@ -104,7 +104,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Wrapper-->
 								<!--begin::Input-->
-								<input class="form-control form-control-lg form-control-solid" type="password" name="password" placeholder="contraseña" autocomplete="off" />
+								<input class="form-control form-control-lg form-control-solid" type="password" name="password" placeholder="Contraseña" autocomplete="off" />
 								<!--end::Input-->
 							</div>
 							<!--end::Input group-->

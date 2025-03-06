@@ -428,7 +428,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-8 fv-row">
-												<select class="form-select form-select-lg form-select-solid" name="id_atraccion" id="id_atraccion" data-control="select2" data-placeholder="Selecciona un usuario">
+												<select class="form-select form-select-lg form-select-solid" name="id_atraccion" id="id_atraccion" data-control="select2" data-placeholder="Selecciona una atracción">
 													<option></option>
 													<?php foreach ($atracciones as $atraccion): ?>
                                                         <option value="<?= $atraccion['id'] ?>" <?= set_select('id_atraccion', $atraccion['id'], isset($review) && $review['id_atraccion'] == $atraccion['id']) ?>>

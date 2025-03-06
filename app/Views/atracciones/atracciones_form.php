@@ -429,7 +429,7 @@ License: For each use you must have a valid license purchased only from above li
                                                     <div class="row">
                                                         <!--begin::Col-->
                                                         <div class="col-lg-6 fv-row">
-                                                            <input type="text" name="nombre" id="nombre" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nobmre" value="<?= isset($atraccion['nombre']) ? esc($atraccion['nombre']) : '' ?>"required/>
+                                                            <input type="text" name="nombre" id="nombre" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre" value="<?= isset($atraccion['nombre']) ? esc($atraccion['nombre']) : '' ?>"required/>
                                                         </div>
                                                         <!--end::Col-->                                                        
                                                     </div>
@@ -481,7 +481,7 @@ License: For each use you must have a valid license purchased only from above li
                                                     <div class="row">
                                                         <!--begin::Col-->
                                                         <div class="col-lg-6 fv-row">
-                                                            <input type="text" name="capacidad_maxima" id="capacidad_maxima" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Capacidad Máxima" value="<?= isset($atraccion['capacidad_maxima']) ? esc($atraccion['capacidad_maxima']) : '' ?>"required/>
+                                                            <input type="text" name="capacidad_maxima" id="capacidad_maxima" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Capacidad máxima" value="<?= isset($atraccion['capacidad_maxima']) ? esc($atraccion['capacidad_maxima']) : '' ?>"required/>
                                                         </div>
                                                         <!--end::Col-->                                                        
                                                     </div>

@@ -583,7 +583,7 @@ License: For each use you must have a valid license purchased only from above li
                                             <div class="row mb-6">
                                                 <!--begin::Label-->
                                                 <label class="col-lg-4 col-form-label fw-bold fs-6">
-                                                    <span class="required" for="password">Nueva Contraseña (opcional)</span>
+                                                    <span class="required" for="password">Nueva Contraseña</span>
                                                     <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Contraseña"></i>
                                                 </label>
                                                 <!--end::Label-->
@@ -754,7 +754,7 @@ License: For each use you must have a valid license purchased only from above li
                                                         <h4 class="text-gray-900 fw-bolder">Estás desactivando tu cuenta</h4>
                                                         <div class="fs-6 text-gray-700">Para mayor seguridad, es necesario que confirmes tu correo electrónico o número de teléfono cuando restablezcas tu contraseña.
                                                         <br />
-                                                        <a class="fw-bolder" href="#">Más información</a></div>
+                                                        <div></div></div>
                                                     </div>
                                                     <!--end::Content-->
                                                 </div>
