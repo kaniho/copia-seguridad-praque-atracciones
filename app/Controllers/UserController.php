@@ -19,8 +19,6 @@ class UserController extends BaseController
         $usuario = $this->request->getVar('usuario'); // Obtener el término de búsqueda desde el formulario
         $email = $this->request->getVar('email'); // Obtener el filtro de email
         $rol = $this->request->getVar('rol'); // Obtener el filtro de rol
-        //$ultimaConexion = $this->request->getVar('ultimaConexion'); // Obtener el filtro de última conexión
-        //$fechaIngreso = $this->request->getVar('fechaIngreso'); // Obtener el filtro de fecha de ingreso
         $usuarioArchivado = $this->request->getVar('usuarioArchivado'); // Obtener el filtro de usuario archivado
         $perPage = $this->request->getVar('perPage') ?? 3; // Obtener el número de elementos por página, por defecto 3
         $page = $this->request->getVar('page') ?? 1; // Obtener la página actual, por defecto 1
@@ -38,8 +36,6 @@ class UserController extends BaseController
         if ($usuario) $filtrosActivos++;
         if ($email) $filtrosActivos++;
         if ($rol) $filtrosActivos++;
-        //if ($ultimaConexion) $filtrosActivos++;
-        //if ($fechaIngreso) $filtrosActivos++;
         if ($usuarioArchivado !== null) $filtrosActivos++; // Contar el filtro de usuarioArchivado incluso si es "Todos"
 
         // Aplicar filtros si se introducen
@@ -52,12 +48,6 @@ class UserController extends BaseController
         if ($rol) {
             $userModel->like('roles.nombre_rol', $rol);
         }
-        /* if ($ultimaConexion) {
-            //$userModel->like('users.ultima_conexion', $ultimaConexion);
-        }
-        if ($fechaIngreso) {
-            $userModel->like('users.fecha_ingreso', $fechaIngreso);
-        }*/
         if ($usuarioArchivado === '0') {
             $userModel->where('users.archivado', 0);
         } elseif ($usuarioArchivado === '1') {
@@ -77,8 +67,6 @@ class UserController extends BaseController
             'usuario' => $usuario,
             'email' => $email,
             'rol' => $rol,
-            //'ultimaConexion' => $ultimaConexion,
-            //'fechaIngreso' => $fechaIngreso,
             'usuarioArchivado' => $usuarioArchivado,
             'perPage' => $perPage,
             'filtrosActivos' => $filtrosActivos,
@@ -90,15 +78,19 @@ class UserController extends BaseController
         return view('usuarios/user_list', $data); // Cargar la vista con los datos
     }
 
+    // Otros métodos...
+
     public function exportExcel() {
         $userModel = new UserModel();
     
         $usuario = $this->request->getVar('usuario'); // Obtener el término de búsqueda desde el formulario
         $email = $this->request->getVar('email'); // Obtener el filtro de email
         $rol = $this->request->getVar('rol'); // Obtener el filtro de rol
-       // $ultimaConexion = $this->request->getVar('ultimaConexion'); // Obtener el filtro de última conexión
-       //$fechaIngreso = $this->request->getVar('fechaIngreso'); // Obtener el filtro de fecha de ingreso
         $usuarioArchivado = $this->request->getVar('usuarioArchivado'); // Obtener el filtro de usuario archivado
+
+        // Parámetros de ordenación
+        $sort = $this->request->getVar('sort') ?? 'id';
+        $order = $this->request->getVar('order') ?? 'asc';
     
         // Construir la consulta con uniones
         $userModel->select('users.*, roles.nombre_rol')
@@ -114,18 +106,15 @@ class UserController extends BaseController
         if ($rol) {
             $userModel->like('roles.nombre_rol', $rol);
         }
-        /*if ($ultimaConexion) {
-            $userModel->like('users.ultima_conexion', $ultimaConexion);
-        }
-        if ($fechaIngreso) {
-            $userModel->like('users.fecha_ingreso', $fechaIngreso);
-        }*/
         if ($usuarioArchivado === '0') {
             $userModel->where('users.archivado', 0);
         } elseif ($usuarioArchivado === '1') {
             $userModel->where('users.archivado', 1);
         }
-    
+        
+        // Aplicar ordenación
+        $userModel->orderBy($sort, $order);
+
         $users = $userModel->findAll(); // Obtener todos los usuarios que coinciden con los filtros
     
         $spreadsheet = new Spreadsheet(); // Crear una nueva hoja de cálculo
@@ -135,8 +124,6 @@ class UserController extends BaseController
         $sheet->setCellValue('A1', 'Nombre');
         $sheet->setCellValue('B1', 'Email');
         $sheet->setCellValue('C1', 'Rol');
-        //$sheet->setCellValue('D1', 'Última conexión');
-        //$sheet->setCellValue('E1', 'Fecha de ingreso');
         $sheet->setCellValue('F1', 'Archivado');
     
         // Recorrer los usuarios y agregarlos a la hoja de cálculo
@@ -145,8 +132,6 @@ class UserController extends BaseController
             $sheet->setCellValue('A' . $row, $user['nombre_usuario']);
             $sheet->setCellValue('B' . $row, $user['email']);
             $sheet->setCellValue('C' . $row, $user['nombre_rol']);
-            //$sheet->setCellValue('D' . $row, $user['ultima_conexion']);
-           // $sheet->setCellValue('E' . $row, $user['fecha_ingreso']);
             $sheet->setCellValue('F' . $row, $user['archivado'] ? 'Sí' : 'No');
             $row++;
         }
@@ -191,7 +176,6 @@ class UserController extends BaseController
                 $userData = [
                     'nombre_usuario' => $this->request->getPost('name'),
                     'email' => $this->request->getPost('email'),
-                    //'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT), // Encriptamos la contraseña antes de guardarla.
                     'id_rol' => $this->request->getPost('rol'),
                 ];
 

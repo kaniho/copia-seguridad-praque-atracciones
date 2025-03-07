@@ -1,6 +1,4 @@
 
-
-
 // script para que funcione el selector de elementos por página
 function changePerPage() {
     const perPage = document.getElementById('perPage').value;

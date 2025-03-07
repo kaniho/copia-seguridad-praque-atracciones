@@ -27,6 +27,7 @@ class ReservaController extends BaseController {
         $fechaCreacion = $this->request->getVar('fechaCreacion'); // Obtener el filtro de fecha de creación
         $revervaArchivada = $this->request->getVar('revervaArchivada'); // Obtener el filtro de reserva archivada
         $perPage = $this->request->getVar('perPage') ?? 3; // Obtener el número de elementos por página, por defecto 3 
+        $page = $this->request->getVar('page') ?? 1; // Obtener la página actual, por defecto 1
         
         // Parámetros de ordenación
         $sort = $this->request->getVar('sort') ?? 'reservas.id';
@@ -99,6 +100,7 @@ class ReservaController extends BaseController {
             'filtrosActivos' => $filtrosActivos, // Enviar el contador de filtros activos a la vista
             'sort' => $sort, // Enviar el campo de ordenación a la vista
             'order' => $order, // Enviar la dirección de ordenación a la vista
+            'page' => $page, // Enviar la página actual a la vista
         ];
 
         // Obtener los nombres de las atracciones y usuarios
@@ -227,6 +229,7 @@ class ReservaController extends BaseController {
                 'id_horario' => 'required|integer',
                 'cantidad_personas' => 'required|integer',
                 'estado' => 'required|string',
+                'turno' => 'required|string',  // mañana o tarde
             ]);
 
             if(!$validation->withRequest($this->request)->run()) {
@@ -238,8 +241,26 @@ class ReservaController extends BaseController {
                 $usuario = $usuariosModel->where('nombre_usuario', $usuarioNombre)->first();
 
                 // Preparar datos del formulario
+                $fecha = $this->request->getPost('fecha');
                 $fecha = (new \DateTime())->format('Y-m-d'); // Formato compatible con la base de datos
                 $fechaCreacion = (new \DateTime())->format('Y-m-d H:i:s'); // Formato compatible con la base de datos
+                $cantidad_personas = $this->request->getPost('cantidad_personas');
+                $turno = $this->request->getPost('turno'); // 'manana' o 'tarde'
+                $id_atraccion = $this->request->getPost('id_atraccion');
+
+                
+                // Verificar disponibilidad de plazas
+                $atraccion = $atraccionesModel->find($id_atraccion);
+                if ($turno == 'mañana') {
+                    $plazas_disponibles = $atraccion['plazas_mañana'];
+                } else {
+                    $plazas_disponibles = $atraccion['plazas_tarde'];
+                }
+
+                if ($cantidad_personas > $plazas_disponibles) {
+                    return redirect()->back()->with('error', 'No hay suficientes plazas disponibles para este turno.');
+                }
+
                 $reservaData = [
                     'id_atraccion' => $this->request->getPost('id_atraccion'),
                     'id_usuario' => $this->request->getPost('id_usuario'), //$usuario['id'],
@@ -258,6 +279,13 @@ class ReservaController extends BaseController {
                     // Crear nueva atracción
                     $reservaModel->save($reservaData);
                     $message = 'Reseña creada correctamente';
+                }
+
+                // Actualizar las plazas disponibles
+                if ($turno == 'mañana') {
+                    $atraccionesModel->update($id_atraccion, ['plazas_mañana' => $plazas_disponibles - $cantidad_personas]);
+                } else {
+                    $atraccionesModel->update($id_atraccion, ['plazas_tarde' => $plazas_disponibles - $cantidad_personas]);
                 }
 
                 // Redirigir al listado con un mensaje de éxito

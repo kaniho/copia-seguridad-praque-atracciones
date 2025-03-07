@@ -11,7 +11,7 @@ Dribbble: www.dribbble.com/keenthemes
 Like: www.facebook.com/keenthemes
 License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
 -->
-<html lang="en">
+<html lang="es">
 <!--begin::Head-->
 
 <head>
@@ -428,7 +428,7 @@ License: For each use you must have a valid license purchased only from above li
                                                     <div class="row">
                                                         <!--begin::Col-->
                                                         <div class="col-lg-6 fv-row">
-                                                            <input type="text" name="name" id="name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre" value="<?= isset($user) ? esc($user['nombre_usuario']) : '' ?>"required/>
+                                                            <input type="text" name="name" id="name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nobmre" value="<?= isset($user) ? esc($user['nombre_usuario']) : '' ?>"required/>
                                                         </div>
                                                         <!--end::Col-->                                                        
                                                     </div>
@@ -467,14 +467,14 @@ License: For each use you must have a valid license purchased only from above li
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-8 fv-row">
-												<select class="form-select form-select-lg form-select-solid" name="rol" id="rol" data-control="select2" data-placeholder="Selecciona un rol">
-													<option></option>
-													<?php foreach ($roles as $rol): ?>
-														<option value="<?= $rol['id'] ?>" <?= set_select('rol', $rol['id'], isset($user) && $user['id_rol'] == $rol['id']) ?>>
-															<?= $rol['nombre_rol'] ?>
-														</option>
-													<?php endforeach; ?>
-												</select>
+													<select class="form-select form-select-lg form-select-solid" name="rol" id="rol" data-control="select2" data-placeholder="Selecciona un rol">
+														<option></option>
+														<?php foreach ($roles as $rol): ?>
+															<option value="<?= $rol['id'] ?>" <?= set_select('rol', $rol['id'], isset($user) && $user['id_rol'] == $rol['id']) ?>>
+																<?= $rol['nombre_rol'] ?>
+															</option>
+														<?php endforeach; ?>
+													</select>
                                                 </div>
                                                 <!--end::Col-->
                                             </div> 										
@@ -508,7 +508,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Copyright-->
 						<div class="text-dark order-2 order-md-1">
 							<span class="text-muted fw-bold me-1">2025©</span>
-							<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+							<span  target="_blank" class="text-gray-800 text-hover-primary">Karmalandia derecho reservados</span>
 						</div>
 					</div>
 					<!--end::Container-->

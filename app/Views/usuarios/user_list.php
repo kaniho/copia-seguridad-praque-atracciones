@@ -418,7 +418,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!-- FORMULARIO DE búsqueda -->
 										</div>
 
-										<h1 class="text-center">Listado de Usuarios</h1>
+										<!--<h1 class="text-center">Listado de Usuarios</h1>-->
 
 										<!--begin::Card title-->
 										<!--begin::Card toolbar-->
@@ -453,6 +453,10 @@ License: For each use you must have a valid license purchased only from above li
 													<div class="px-7 py-5" data-kt-user-table-filter="form">
 														<!--begin::Input group-->
 														<form method="GET" action="<?= base_url("users") ?>">
+															<input type="hidden" name="perPage" value="<?= esc($perPage) ?>">
+															<input type="hidden" name="page" value="<?= esc($page) ?>">
+															<input type="hidden" name="sort" value="<?= esc($sort) ?>">
+															<input type="hidden" name="order" value="<?= esc($order) ?>">
 															<input type="hidden" name="perPage" value="<?= esc($perPage) ?>">
 															<input type="hidden" name="page" value="<?= esc($page) ?>">
 															<div class="mb-5">
@@ -523,6 +527,8 @@ License: For each use you must have a valid license purchased only from above li
 													<input type="hidden" name="usuario" value="<?= esc($usuario) ?>">
 													<input type="hidden" name="email" value="<?= esc($email) ?>">
 													<input type="hidden" name="rol" value="<?= esc($rol) ?>">
+													<input type="hidden" name="sort" value="<?= esc($sort) ?>">
+													<input type="hidden" name="order" value="<?= esc($order) ?>">
 													
 													<input type="hidden" name="usuarioArchivado" value="<?= esc($usuarioArchivado) ?>">
 													<button type="submit" class="btn btn-light-primary me-3">
@@ -571,8 +577,8 @@ License: For each use you must have a valid license purchased only from above li
 																		<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_users .form-check-input" value="1" />
 																	</div>
 																</th>											
-																<th class="min-w-125px">
-																	<a href="<?= base_url('users?sort=nombre_usuario&order=' . ($sort == 'nombre_usuario' && $order == 'asc' ? 'desc' : 'asc') . '&perPage=' . $perPage) ?>">
+																<th class="min-w-125px">																
+																	<a href="<?= base_url('users?sort=nombre_usuario&order=' . ($sort == 'nombre_usuario' && $order == 'asc' ? 'desc' : 'asc') . '&usuario=' . $usuario . '&email=' . $email . '&rol=' . $rol . '&usuarioArchivado=' . $usuarioArchivado . '&perPage=' . $perPage . '&page=' . $page) ?>">
 																		Usuario
 																		<?php if ($sort == 'nombre_usuario'): ?>
 																			<i class="fa fa-arrow-<?= $order == 'asc' ? 'up' : 'down' ?>"></i>
@@ -580,7 +586,7 @@ License: For each use you must have a valid license purchased only from above li
 																	</a>
 																</th>
 																<th class="min-w-125px">
-																	<a href="<?= base_url('users?sort=email&order=' . ($sort == 'email' && $order == 'asc' ? 'desc' : 'asc') . '&perPage=' . $perPage) ?>">
+																	<a href="<?= base_url('users?sort=email&order=' . ($sort == 'email' && $order == 'asc' ? 'desc' : 'asc') . '&usuario=' . $usuario . '&email=' . $email . '&rol=' . $rol . '&usuarioArchivado=' . $usuarioArchivado . '&perPage=' . $perPage . '&page=' . $page) ?>">
 																		Email
 																		<?php if ($sort == 'email'): ?>
 																			<i class="fa fa-arrow-<?= $order == 'asc' ? 'up' : 'down' ?>"></i>
@@ -588,7 +594,7 @@ License: For each use you must have a valid license purchased only from above li
 																	</a>
 																</th>
 																<th class="min-w-125px">
-																	<a href="<?= base_url('users?sort=nombre_rol&order=' . ($sort == 'nombre_rol' && $order == 'asc' ? 'desc' : 'asc') . '&perPage=' . $perPage) ?>">
+																	<a href="<?= base_url('users?sort=nombre_rol&order=' . ($sort == 'nombre_rol' && $order == 'asc' ? 'desc' : 'asc') . '&usuario=' . $usuario . '&email=' . $email . '&rol=' . $rol . '&usuarioArchivado=' . $usuarioArchivado . '&perPage=' . $perPage . '&page=' . $page) ?>">
 																		Rol
 																		<?php if ($sort == 'nombre_rol'): ?>
 																			<i class="fa fa-arrow-<?= $order == 'asc' ? 'up' : 'down' ?>"></i>
@@ -619,7 +625,11 @@ License: For each use you must have a valid license purchased only from above li
 																		<?php if ($user['archivado']): ?>
 																			<div  id="archivado"></div> <!-- esto es para identificar los datos que estan archivado -->
 																		<?php endif; ?>
+																		<!--begin:: Avatar -->
 																		<?= esc($user['nombre_usuario']) ?></a> <!-- PARTE DEL FOREACH DONDE PILLA EL USUARIO -->	
+																		<!--begin::User details-->
+																		
+																		<!--begin::User details-->
 																	</td>
 																	<!--end::User=-->
 																	<!--begin::Email=-->
@@ -688,11 +698,11 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Table-->
 													<!-- Paginador -->
 																									
-													<div class="mt-4">
+													
 														<div class="d-flex justify-content-between align-items-center">
-															<div class="d-flex align-items-center">
+															<div class="d-flex align-items-center ">
 																<label for="perPage" class="form-label me-2">Elementos por página:</label>
-																<select name="perPage" id="perPage" class="form-select form-select-sm" style="width: auto;" onchange="changePerPage()">
+																<select class="form-select form-select-sm form-select-solid" name="perPage" id="perPage"  data-control="select2"  onchange="changePerPage()">
 																	<option value="3" <?= $perPage == 3 ? 'selected' : '' ?>>3</option>
 																	<option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5</option>
 																	<option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10</option>
@@ -700,10 +710,10 @@ License: For each use you must have a valid license purchased only from above li
 																</select>
 															</div>
 															<div>
-																<?= $pager->only(['usuario', 'email', 'rol', 'ultimaConexion', 'fechaIngreso', 'usuarioArchivado', 'perPage', 'sort', 'order'])->links("default", "custom_pagination") ?> <!-- Usa la plantilla predeterminada -->
+																<?= $pager->only(['usuario', 'email', 'rol', 'usuarioArchivado', 'perPage', 'sort', 'order'])->links("default", "custom_pagination") ?> <!-- Usa la plantilla predeterminada -->
 															</div>
 														</div>
-													</div>
+													
 												<?php else: ?>
 													<p class="text-center">No hay usuarios registrados.</p>
 												<?php endif; ?>
@@ -751,7 +761,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Copyright-->
 						<div class="text-dark order-2 order-md-1">
 							<span class="text-muted fw-bold me-1">2025©</span>
-							<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+							<span  target="_blank" class="text-gray-800 text-hover-primary">Karmalandia derecho reservados</span>
 						</div>
 					</div>
 					<!--end::Container-->

@@ -428,7 +428,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-8 fv-row">
-												<select class="form-select form-select-lg form-select-solid" name="id_atraccion" id="id_atraccion" data-control="select2" data-placeholder="Selecciona una atracción">
+												<select class="form-select form-select-lg form-select-solid" name="id_atraccion" id="id_atraccion" data-control="select2" data-placeholder="Selecciona un usuario">
 													<option></option>
 													<?php foreach ($atracciones as $atraccion): ?>
                                                         <option value="<?= $atraccion['id'] ?>" <?= set_select('id_atraccion', $atraccion['id'], isset($review) && $review['id_atraccion'] == $atraccion['id']) ?>>
@@ -517,7 +517,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Copyright-->
 						<div class="text-dark order-2 order-md-1">
 							<span class="text-muted fw-bold me-1">2025©</span>
-							<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+							<span  target="_blank" class="text-gray-800 text-hover-primary">Karmalandia derecho reservados</span>
 						</div>
 					</div>
 					<!--end::Container-->
